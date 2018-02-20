@@ -1,8 +1,15 @@
 <template>
   <div>
-    <h1>HELLO</h1>
     <p>The results {{ $store.state.search.results.length }}</p>
-    <button @click="fetch">fetch</button>
+    <b-field>
+      <b-input placeholder="Search..."
+               type="search"
+               icon="magnify">
+      </b-input>
+      <p class="control">
+        <button class="button is-primary" @click="fetch">Search</button>
+      </p>
+    </b-field>
   </div>
 </template>
 

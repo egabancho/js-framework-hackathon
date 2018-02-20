@@ -1,7 +1,16 @@
 <template>
-  <div class="hello">
-    <search-bar />
-    <search-results />
+  <div class="container is-fluid">
+    <search-bar/>
+    <section>
+      <div class="columns">
+        <div class="column is-one-quarter">
+          Facets
+        </div>
+        <div class="column is-three-quarters">
+          <search-results />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 

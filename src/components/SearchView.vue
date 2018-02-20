@@ -17,12 +17,16 @@ export default {
   name: 'SearchView',
   components: {SearchBar, SearchResults, Count, Loading},
   methods: mapActions([
-    'fetch'
+    'fetch',
+    'update',
   ]),
   watch: {
-    '$route.query' () {
-      this.fetch()
+    '$route' (to, from) {
+      this.update(this.$route.query)
     }
+  },
+  mounted () {
+    this.update(this.$route.query)
   },
   data () {
     return {

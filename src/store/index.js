@@ -14,16 +14,19 @@ export default new Vuex.Store({
 		}
 	},
 	mutations: {
-		fetch (state) {
-			search.get().then((results) => {
+		fetch (state, data={}) {
+			search.get(data).then((results) => {
 				state.search.results = results.data;
 			});
 		},
 	},
 	actions: {
-		fetch ({ commit }) {
+		updateQuery({commit}, e) {
+			console.log('IM INSIDE DARTA', e.target.value);
+		},
+		fetch ({ commit }, data) {
 			return new Promise((resolve, reject) => {
-			 commit('fetch')
+			 commit('fetch', data);
 			 resolve()
 			})
 		}

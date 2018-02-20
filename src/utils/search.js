@@ -8,7 +8,7 @@ class SearchAPI {
   }
 
   get(params) {
-    return this.search.get(querystring.stringify(params))
+    return this.search.get('', {params})
   };
 
   makeRequest(params) {

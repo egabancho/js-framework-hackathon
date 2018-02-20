@@ -9,7 +9,7 @@
 <script>
 import SearchBar from '@/components/SearchBar'
 import SearchResults from '@/components/SearchResults'
-import Count from '@/components/count'
+import Count from '@/components/Count'
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'SearchView',

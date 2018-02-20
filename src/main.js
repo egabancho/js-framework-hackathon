@@ -9,7 +9,7 @@ import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
 
 Vue.config.productionTip = false
-
+Vue.use(Buefy)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -18,4 +18,3 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
-Vue.use(Buefy)

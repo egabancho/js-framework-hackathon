@@ -1,12 +1,10 @@
 <template>
   <div>
+    <p style="white-space: pre-line;">{{ q }}</p>
     <b-field>
-      <b-input placeholder="Search..."
-               type="search"
-               icon="magnify">
-      </b-input>
+      <b-input placeholder="Search..."  @input="updateQuery" type="search" v-model="q" icon="magnify"></b-input>
       <p class="control">
-        <button class="button is-primary" @click="fetch">Search</button>
+        <button class="button is-primary" @click="fetch()">Search</button>
       </p>
     </b-field>
   </div>
@@ -17,13 +15,16 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'search-bar',
   data () {
-  return {}
+    return {
+      q: 'dadas'
+    }
   },
   computed: mapGetters([
 
   ]),
   methods: mapActions([
-    'fetch'
+    'fetch',
+    'updateQuery'
   ]),
   mounted: function () {
   	this.fetch();

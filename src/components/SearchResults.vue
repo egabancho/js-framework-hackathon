@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>RESULTS</h1>
     <ul>
       <li v-for="item in $store.state.search.results">
         {{ item.metadata.title }}

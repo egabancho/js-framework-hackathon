@@ -6,15 +6,10 @@ class SearchAPI {
   constructor(customOptions={}) {
     this.search = axios.create({...config, ...customOptions});
   }
-
   get(params) {
     return this.search.get('', {params})
-  };
-
-  makeRequest(params) {
-
   }
-};
+}
 
 let search = new SearchAPI()
 

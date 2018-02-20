@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <count />
+    <loading />
     <search-bar />
     <search-results />
   </div>
@@ -10,10 +11,11 @@
 import SearchBar from '@/components/SearchBar'
 import SearchResults from '@/components/SearchResults'
 import Count from '@/components/Count'
+import Loading from '@/components/Loading'
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'SearchView',
-  components: {SearchBar, SearchResults, Count},
+  components: {SearchBar, SearchResults, Count, Loading},
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

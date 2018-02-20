@@ -1,10 +1,9 @@
 <template>
   <div>
-    <p style="white-space: pre-line;">{{ q }}</p>
     <b-field>
       <b-input placeholder="Search..."  type="search" v-model="q" icon="magnify"></b-input>
       <p class="control">
-        <button class="button is-primary" @click="fetch({q:q})">Search</button>
+        <button class="button is-primary" @click="update({q})">Search</button>
       </p>
     </b-field>
   </div>
@@ -16,18 +15,17 @@ export default {
   name: 'search-bar',
   data () {
     return {
-      q: 'dadas'
+      q: null
     }
   },
   computed: mapGetters([
 
   ]),
   methods: mapActions([
-    'fetch',
-    'updateQuery'
+    'update',
   ]),
   mounted: function () {
-  	this.fetch();
+  	this.update();
   }
 }
 </script>

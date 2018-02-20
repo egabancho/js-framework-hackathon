@@ -16,7 +16,7 @@ export default new Vuex.Store({
 	mutations: {
 		fetch (state, data={}) {
 			search.get(data).then((results) => {
-				state.search.results = results.data;
+				state.search.results = results.data.hits.hits;
 			});
 		},
 	},

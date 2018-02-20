@@ -1,7 +1,10 @@
 const config = {
-  url: '/records',
   method: 'get',
-  baseURL: 'https://zenodo.org/api/records/'
+  baseURL: 'https://videos.cern.ch/api/records/',
+  headers: {
+      'Content-Type': 'application/json',
+
+  }
 }
 
 export default config

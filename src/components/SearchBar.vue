@@ -2,9 +2,9 @@
   <div>
     <p style="white-space: pre-line;">{{ q }}</p>
     <b-field>
-      <b-input placeholder="Search..."  @input="updateQuery" type="search" v-model="q" icon="magnify"></b-input>
+      <b-input placeholder="Search..."  type="search" v-model="q" icon="magnify"></b-input>
       <p class="control">
-        <button class="button is-primary" @click="fetch()">Search</button>
+        <button class="button is-primary" @click="fetch({q:q})">Search</button>
       </p>
     </b-field>
   </div>

@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li v-for="item in $store.state.search.results">
-        {{ item.metadata.title }}
+        {{ item.metadata.title.title }}
         {{ item.description }}
       </li>
     </ul>

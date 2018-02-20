@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Number of results {{ $store.state.search.results.length }}</p>
+    <p>Number of results {{ $store.state.search.total }}</p>
   </div>
 </template>
 

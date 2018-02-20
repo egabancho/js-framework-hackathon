@@ -1,14 +1,14 @@
 <template>
   <div>
-
+  <h2>{{$store.state.search.args.page}}</h2>
   <b-pagination
-     :total="total"
-     :current.sync="current"
-     :order="order"
-     :size="size"
+     :total="$store.state.search.total"
+     :current.sync="page"
+     :size="$store.getters.getSize"
      :simple="isSimple"
      :rounded="isRounded"
-     :per-page="perPage">
+     @change="(page) => {update({page:page})}"
+     :per-page="$store.state.search.args.size">
   </b-pagination>
   </div>
 </template>
@@ -18,20 +18,17 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'pagination',
   data () {
-  return {
-        total: 200,
-        current: 1,
-        perPage: 20,
-        order: '',
-        size: '',
-        isSimple: false,
-        isRounded: false
+    return {
+      page: this.$store.getters.getCurrentPage,
+      isSimple: false,
+      isRounded: false
     }
   },
-  computed: mapGetters([
-
-  ]),
+  mounted: function () {
+    this.page = this.$store.getters.getCurrentPage;
+  },
   methods: mapActions([
+    'update'
   ])
 }
 </script>

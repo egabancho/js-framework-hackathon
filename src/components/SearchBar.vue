@@ -3,7 +3,7 @@
     <b-field>
       <b-input placeholder="Search..."  type="search" v-model="q" icon="magnify"></b-input>
       <p class="control">
-        <button class="button is-primary" @click="update({q})">Search</button>
+        <button class="button is-primary" @click="update({q:q, page:1})">Search</button>
       </p>
     </b-field>
   </div>
@@ -24,8 +24,9 @@ export default {
   methods: mapActions([
     'update',
   ]),
-  mounted: function () {
-  	this.update();
+  created: function () {
+    this.q = this.$store.getters.getCurrentQuery;
+  	//this.update();
   }
 }
 </script>

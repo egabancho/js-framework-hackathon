@@ -4,6 +4,7 @@
     <loading />
     <search-bar />
     <search-results />
+    <pagination />
   </div>
 </template>
 
@@ -12,21 +13,20 @@ import SearchBar from '@/components/SearchBar'
 import SearchResults from '@/components/SearchResults'
 import Count from '@/components/Count'
 import Loading from '@/components/Loading'
+import Pagination from '@/components/Pagination'
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'SearchView',
-  components: {SearchBar, SearchResults, Count, Loading},
+  components: {SearchBar, SearchResults, Count, Loading, Pagination},
   methods: mapActions([
     'fetch',
     'update',
   ]),
-  mounted () {
+  created () {
     this.update(this.$route.query)
   },
   data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+    return {}
   }
 }
 </script>

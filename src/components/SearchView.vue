@@ -20,11 +20,6 @@ export default {
     'fetch',
     'update',
   ]),
-  watch: {
-    '$route' (to, from) {
-      this.update(this.$route.query)
-    }
-  },
   mounted () {
     this.update(this.$route.query)
   },

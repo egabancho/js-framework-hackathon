@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import search from './../utils/search'
+import router from './../router'
 
 Vue.use(Vuex)
 
@@ -42,11 +43,19 @@ export default new Vuex.Store({
 				resolve()
 			})
 		},
+    updateURL({commit}, args) {
+		  return new Promise((resolve, reject) => {
+        router.push({query: args})
+        resolve()
+      })
+    },
 		update({dispatch, commit, state}, args={}) {
-			dispatch('updateArgs', args).then(() => {
-				dispatch('fetch')
-			})
-		},
+      dispatch('updateURL', args).then(() => {
+        dispatch('updateArgs', args).then(() => {
+          dispatch('fetch')
+        })
+      })
+    },
 		fetch ({ commit, state }) {
 			commit('fetchRequest');
 			search.get(state.search.args).then(

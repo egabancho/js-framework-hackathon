@@ -1,18 +1,20 @@
 <template>
   <div>
-    <ul>
-      <li v-for="item in $store.state.search.results">
-        {{ item.metadata.title.title }}
-        {{ item.description }}
-      </li>
-    </ul>
+    <h1>RESULTS</h1>
+      <search-item
+        v-for="item in $store.state.search.results"
+        :item='item'
+        :key='item.id'>
+      </search-item>
   </div>
 </template>
 
 <script>
+import SearchItem from '@/components/SearchItem'
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'search-results',
+  components: {SearchItem},
   data () {
     return {}
   },

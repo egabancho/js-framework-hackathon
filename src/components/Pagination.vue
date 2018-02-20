@@ -1,15 +1,14 @@
 <template>
   <div>
-  <h2>{{$store.state.search.args.page}}</h2>
-  <b-pagination
-     :total="$store.state.search.total"
-     :current.sync="page"
-     :size="$store.getters.getSize"
-     :simple="isSimple"
-     :rounded="isRounded"
-     @change="(page) => {update({page:page})}"
-     :per-page="$store.state.search.args.size">
-  </b-pagination>
+    <b-pagination
+       :total="$store.state.search.total"
+       :current.sync="page"
+       :size="$store.getters.getSize"
+       :simple="isSimple"
+       :rounded="isRounded"
+       @change="(page) => {update({page:page})}"
+       :per-page="$store.state.search.args.size">
+    </b-pagination>
   </div>
 </template>
 

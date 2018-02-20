@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <count />
-    <loading />
+    <messages />
     <search-bar />
     <search-results />
     <pagination />
@@ -12,12 +12,12 @@
 import SearchBar from '@/components/SearchBar'
 import SearchResults from '@/components/SearchResults'
 import Count from '@/components/Count'
-import Loading from '@/components/Loading'
+import Messages from '@/components/Messages'
 import Pagination from '@/components/Pagination'
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'SearchView',
-  components: {SearchBar, SearchResults, Count, Loading, Pagination},
+  components: {SearchBar, SearchResults, Count, Messages, Pagination},
   methods: mapActions([
     'fetch',
     'update',
@@ -33,6 +33,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hello {
+padding-top: 30px;
+}
 h1, h2 {
   font-weight: normal;
 }

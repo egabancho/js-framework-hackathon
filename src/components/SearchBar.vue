@@ -1,7 +1,7 @@
 <template>
   <div>
-    <b-field>
-      <b-input placeholder="Search..."  type="search" v-model="q" icon="magnify"></b-input>
+    <b-field class="wrapbar">
+      <b-input class="bar" placeholder="Search..."  type="search" v-model="q" icon="magnify"></b-input>
       <p class="control">
         <button class="button is-primary" @click="update({q:q, page:1})">Search</button>
       </p>
@@ -30,3 +30,12 @@ export default {
   }
 }
 </script>
+<style scoped>
+.wrapbar {
+  margin: 50px 0;
+}
+.bar {
+  width: 600px;
+}
+
+</style>

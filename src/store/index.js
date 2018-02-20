@@ -41,8 +41,10 @@ export default new Vuex.Store({
 			state.search.results = payload.data;
 			state.search.total = payload.total;
 		},
-		fetchError(state) {
+		fetchError(state, payload) {
+			console.log('errors', payload);
 			state.search.loading = false;
+			state.search.errors.push(paload.data);
 		},
 		updateArgs (state, args={}) {
 			if (args.args) {
@@ -83,7 +85,7 @@ export default new Vuex.Store({
 					commit('fetchSuccess', {data:results.data.hits.hits, total: results.data.hits.total});
 			 	},
 				(errors) => {
-					commit('fetchError');
+					commit('fetchError', {data:errors});
 				}
 		 );
 		}

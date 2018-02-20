@@ -1,26 +1,19 @@
 <template>
-  <div class="container is-fluid">
-    <search-bar/>
-    <section>
-      <div class="columns">
-        <div class="column is-one-quarter">
-          Facets
-        </div>
-        <div class="column is-three-quarters">
-          <search-results />
-        </div>
-      </div>
-    </section>
+  <div class="hello">
+    <count />
+    <search-bar />
+    <search-results />
   </div>
 </template>
 
 <script>
 import SearchBar from '@/components/SearchBar'
 import SearchResults from '@/components/SearchResults'
+import Count from '@/components/count'
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'SearchView',
-  components: {SearchBar, SearchResults},
+  components: {SearchBar, SearchResults, Count},
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

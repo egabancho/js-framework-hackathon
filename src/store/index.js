@@ -6,7 +6,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
 	state: {
-		count: 0,
 		search: {
 			errors: [],
 			args: {},
@@ -17,13 +16,11 @@ export default new Vuex.Store({
 	mutations: {
 		fetch (state) {
 			search.get().then((results) => {
-				console.log('RESULTS', results.data[0].metadata)
 				state.search.results = results.data;
 			});
 		},
 	},
 	actions: {
-		//
 		fetch ({ commit }) {
 			return new Promise((resolve, reject) => {
 			 commit('fetch')

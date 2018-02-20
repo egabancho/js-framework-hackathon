@@ -4,7 +4,7 @@
     <ul>
       <li v-for="item in $store.state.search.results">
         {{ item.metadata.title }}
-        {{ item.metadata.description }}
+        {{ item.description }}
       </li>
     </ul>
   </div>
@@ -15,7 +15,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'search-results',
   data () {
-  return {}
+    return {}
   },
   computed: mapGetters([
   ]),

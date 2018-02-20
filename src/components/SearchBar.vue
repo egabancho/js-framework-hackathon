@@ -1,6 +1,5 @@
 <template>
   <div>
-    <p>The results {{ $store.state.search.results.length }}</p>
     <b-field>
       <b-input placeholder="Search..."
                type="search"
@@ -25,6 +24,9 @@ export default {
   ]),
   methods: mapActions([
     'fetch'
-  ])
+  ]),
+  mounted: function () {
+  	this.fetch();
+  }
 }
 </script>

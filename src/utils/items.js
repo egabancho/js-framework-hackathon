@@ -1,13 +1,11 @@
-function defaultItemTemplateFactory (createElement, item) {
+function defautlItemComponentFactory (item) {
 
   switch(item.metadata.type){
   case 'VIDEO':
-    return  createElement( 'div', item.metadata.title.title)
-  case 'FOOTAGE':
-    return createElement( 'div', {style: { color: 'blue'}}, item.metadata.title.title)
+    return 'item-video'
   default:
-    return createElement('div', 'Dunno')
+    return 'item-default'
   }
 }
 
-export default defaultItemTemplateFactory
+export default defautlItemComponentFactory

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>RESULTS</h1>
+    <h1 v-if="$store.state.search.results.length > 0">RESULTS</h1>
+    <h1 v-else>NO RESULTS</h1>
       <search-item
         v-for="item in $store.state.search.results"
         :item='item'

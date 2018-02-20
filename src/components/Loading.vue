@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{ $store.state.search.loading ? 'Loading...' : 'Not loading' }}</p>
+    <p>{{ $store.state.search.loading ? 'Loading...' : '' }}</p>
   </div>
 </template>
 

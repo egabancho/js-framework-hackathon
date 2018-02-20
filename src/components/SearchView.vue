@@ -16,6 +16,14 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'SearchView',
   components: {SearchBar, SearchResults, Count, Loading},
+  methods: mapActions([
+    'fetch'
+  ]),
+  watch: {
+    '$route.query' () {
+      this.fetch()
+    }
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

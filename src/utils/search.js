@@ -4,7 +4,7 @@ import querystring from 'querystring'
 
 class SearchAPI {
   constructor(customOptions={}) {
-    this.search = axios.create({...config, ...customOptions})
+    this.search = axios.create({...config, ...customOptions});
   }
 
   get(params) {

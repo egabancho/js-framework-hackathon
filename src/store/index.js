@@ -21,8 +21,8 @@ export default new Vuex.Store({
 		},
 	},
 	actions: {
-		updateQuery({commit}, e) {
-			console.log('IM INSIDE DARTA', e.target.value);
+		updateQuery({commit}, query) {
+			commit('fetch', {q: query});
 		},
 		fetch ({ commit }, data) {
 			return new Promise((resolve, reject) => {

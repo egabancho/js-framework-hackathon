@@ -1,26 +1,29 @@
 <template>
   <div>
     <h1 v-if="$store.state.search.total === 0">No results</h1>
-    <search-item
-      v-for="item in $store.state.search.results"
-      :item='item'
-      :key='item.id'>
-    </search-item>
+    <search-item-proxy v-for="item in $store.state.search.results"
+      :key="item.id"
+      :itemComponent="itemComponentName(item)"
+      :item="item">
+    </search-item-proxy>
   </div>
 </template>
 
 <script>
-import SearchItem from '@/components/SearchItem'
+import SearchItemProxy from '@/components/SearchItemProxy'
+import config from '../utils/configure'
+
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'search-results',
-  components: {SearchItem},
+  components: {SearchItemProxy},
   data () {
     return {}
   },
-  computed: mapGetters([
-  ]),
-  methods: mapActions([
-  ])
+  methods: {
+    itemComponentName: (item) => {
+      return config.itemComponentFactory(item)
+    }
+  }
 }
 </script>

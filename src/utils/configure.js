@@ -1,4 +1,7 @@
-import defautlItemTemplateFactory from './items';
+import defautlItemComponentFactory from './items';
+import ItemVideo from '@/components/items/ItemVideo'
+import ItemDefault from '@/components/items/ItemDefault'
+
 
 const config = {
   method: 'get',
@@ -7,7 +10,8 @@ const config = {
       'Content-Type': 'application/json',
 
   },
-  itemTemplateFactory: defautlItemTemplateFactory
+  itemComponents: {ItemVideo, ItemDefault},
+  itemComponentFactory: defautlItemComponentFactory
 }
 
 export default config

@@ -4,4 +4,4 @@ const config = {
   baseURL: 'https://zenodo.org/api'
 }
 
-export default config;
+export default config

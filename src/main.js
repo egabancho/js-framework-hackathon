@@ -5,9 +5,9 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-import search from './utils/search';
+import search from './utils/search'
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({

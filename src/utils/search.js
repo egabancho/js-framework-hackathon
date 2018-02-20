@@ -1,15 +1,14 @@
 import axios from 'axios';
 import config from './configure'
-import querystring from 'querystring';
+import querystring from 'querystring'
 
 class SearchAPI {
   constructor(customOptions={}) {
-    this.search = axios.create({...config, ...customOptions});
-    console.log(this.search);
+    this.search = axios.create({...config, ...customOptions})
   }
 
   get(params) {
-    return this.search.get(querystring.stringify(params));
+    return this.search.get(querystring.stringify(params))
   };
 
   makeRequest(params) {
@@ -17,6 +16,6 @@ class SearchAPI {
   }
 };
 
-let search = new SearchAPI();
+let search = new SearchAPI()
 
-export default search;
+export default search

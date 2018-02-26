@@ -11,7 +11,6 @@ import 'buefy/lib/buefy.css'
 Vue.config.productionTip = false
 Vue.use(Buefy)
 /* eslint-disable no-new */
-Vue.use(Buefy)
 new Vue({
   el: '#app',
   router,

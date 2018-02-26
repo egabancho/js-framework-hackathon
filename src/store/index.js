@@ -11,8 +11,8 @@ export default new Vuex.Store({
 			errors: [],
 			args: {
 				size: 5,
-
-				q: null
+				q: null,
+				page: 1
 			},
 			loading: false,
 			results: [],
@@ -42,15 +42,11 @@ export default new Vuex.Store({
 			state.search.total = payload.total;
 		},
 		fetchError(state, payload) {
-			console.log('errors', payload);
 			state.search.loading = false;
 			state.search.errors.push(paload.data);
 		},
 		updateArgs (state, args={}) {
 			if (args.args) {
-				if (args.args.q !== state.search.args.q) {
-					//args.args.page = 1;
-				}
 				if (args.args.page) {
 					args.args.page = parseInt(args.args.page)
 				}
@@ -71,7 +67,7 @@ export default new Vuex.Store({
         resolve()
       })
     },
-		update({dispatch, commit, state}, args={}) {
+		update({dispatch}, args={}) {
 			dispatch('updateArgs', args).then(() => {
       	dispatch('updateURL').then(() => {
           dispatch('fetch')
@@ -82,7 +78,7 @@ export default new Vuex.Store({
 			commit('fetchRequest');
 			search.get(state.search.args).then(
 				(results) => {
-					commit('fetchSuccess', {data:results.data.hits.hits, total: results.data.hits.total});
+					commit('fetchSuccess', {data: results.data.hits.hits, total: results.data.hits.total});
 			 	},
 				(errors) => {
 					commit('fetchError', {data:errors});

@@ -26,7 +26,6 @@ export default {
   ]),
   created: function () {
     this.q = this.$store.getters.getCurrentQuery;
-  	//this.update();
   }
 }
 </script>
@@ -37,5 +36,4 @@ export default {
 .bar {
   width: 600px;
 }
-
 </style>

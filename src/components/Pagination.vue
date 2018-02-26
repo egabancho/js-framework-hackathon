@@ -7,7 +7,7 @@
        :simple="isSimple"
        :rounded="isRounded"
        @change="(page) => {update({page:page})}"
-       :per-page="$store.state.search.args.size">
+       :per-page="$store.getters.getSize">
     </b-pagination>
   </div>
 </template>

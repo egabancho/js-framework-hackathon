@@ -1,3 +1,5 @@
+let content =
+
 <template>
   <div>
     <h1 v-if="$store.state.search.total === 0">No results</h1>
